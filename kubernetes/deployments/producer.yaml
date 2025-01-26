@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: producer
-        image: gcr.io/rpl2-fiuba/rpl-2.0:latest
+        image: producer:local
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: "producer,prod"
@@ -44,7 +44,7 @@ spec:
               name: db-host
               key: host
         - name: MYSQL_SERVICE_PORT
-          value: "3306"
+          value: "33068"
         - name: MYSQL_USERNAME
           valueFrom:
             secretKeyRef:
